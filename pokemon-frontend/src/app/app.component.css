@@ -1,0 +1,59 @@
+/* ===== Navbar Container ===== */
+.navbar {
+  background-color: transparent !important; /* remove background */
+  padding: 12px 0;
+  box-shadow: none;
+}
+
+/* Brand */
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #dc3545 !important;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+
+.navbar-brand:hover {
+  color: #dc3545 !important;
+}
+
+/* Buttons as navbar links */
+.navbar .btn {
+  position: relative;
+  display: inline-block;
+  color: #000 !important;
+  font-weight: 500;
+  background: none !important;   /* remove button bg */
+  border: none !important;       /* remove border */
+  margin-right: 16px;
+  padding: 4px 8px;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+/* Hover underline */
+.navbar .btn::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #dc3545;
+  transition: width 0.3s ease;
+}
+
+/* On hover or active, show underline */
+.navbar .btn:hover::after,
+.navbar .btn.active::after,
+.navbar .btn.router-link-active::after {
+  width: 100%;
+}
+
+/* Active color */
+.navbar .btn.active,
+.navbar .btn.router-link-active {
+  color: #dc3545 !important;
+  font-weight: 600;
+}

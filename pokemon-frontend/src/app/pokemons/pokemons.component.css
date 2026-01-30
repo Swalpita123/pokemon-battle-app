@@ -1,0 +1,52 @@
+/* Grid layout for Pokémon cards - 5 per row */
+.pokemon-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 cards per row */
+  gap: 12px; /* small gap */
+  justify-items: center;
+}
+
+/* Pokémon card */
+.pokemon-card {
+  width: 180px;                  /* slightly wider card */
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+  background: #f9f9f9;
+  transition: 0.3s ease;
+}
+
+.pokemon-card:hover {
+  transform: scale(1.05);
+  border-color: #007bff;
+}
+
+/* Pokémon image */
+.pokemon-card img {
+  width: 160px;   /* bigger image */
+  height: 160px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
+/* Pokémon name */
+.pokemon-card h5 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+/* Pokémon type */
+.pokemon-card .type {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 6px;
+  display: block;
+}
+
+/* Pokémon stats */
+.pokemon-card .stats p {
+  font-size: 12px;
+  margin: 2px 0;
+}

@@ -1,0 +1,24 @@
+<div class="container mt-4">
+  <h2 class="text-center mb-4">📘 Pokémon List</h2>
+
+  <div *ngIf="loading" class="text-center mt-5">
+    <div class="spinner-border text-warning"></div>
+    <p class="mt-2">Loading Pokémon...</p>
+  </div>
+
+  <div class="pokemon-grid" *ngIf="!loading">
+    <div class="pokemon-card" *ngFor="let p of pokemons">
+      <img [src]="p.image" [alt]="p.name" />
+      <h5>{{ p.name }}</h5>
+      <span class="type">{{ p.type }}</span>
+      <div class="stats">
+        <p>
+          ⚔️ Power: <strong>{{ p.power }}</strong>
+        </p>
+        <p>
+          ❤️ Life: <strong>{{ p.life }}</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

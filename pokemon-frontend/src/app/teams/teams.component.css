@@ -1,0 +1,102 @@
+/* ---------- Pokémon Selection List ---------- */
+.pokemons-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px; /* slightly smaller gap */
+}
+
+.pokemon-card {
+  width: 90px; /* a little wider for image + name */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  text-align: center;
+  padding: 6px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.pokemon-card img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  margin-bottom: 4px;
+}
+
+.pokemon-card:hover {
+  background-color: #f8f9fa;
+  border-color: #007bff;
+}
+
+.pokemon-card.selected {
+  border: 2px solid #007bff;
+  background-color: #e7f1ff;
+}
+
+/* Hide type & power in Pokémon selection */
+.pokemon-card .pokemon-type,
+.pokemon-card .pokemon-power {
+  display: none;
+}
+
+/* ---------- Selected Pokémon Section ---------- */
+.selected-pokemons .selected-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.selected-card {
+  width: 90px; /* same width as selection */
+  padding: 6px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.selected-card img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  margin-bottom: 4px;
+}
+
+.selected-card .pokemon-name {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* ---------- Team Cards ---------- */
+.team-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #fefefe;
+}
+
+.team-card .team-pokemons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.team-card .team-pokemons .text-center {
+  width: 60px; /* fixed box width for alignment */
+  text-align: center;
+}
+
+.team-card .team-pokemons img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 4px;
+  margin-bottom: 2px;
+}
+
+.team-card .team-pokemons div {
+  font-size: 11px;
+  text-align: center;
+  font-weight: 500;
+}

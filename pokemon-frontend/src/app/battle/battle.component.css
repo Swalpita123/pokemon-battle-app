@@ -1,0 +1,10 @@
+/* Team Pokémon images */
+.team-pokemon {
+  width: 80px;       /* set fixed width */
+  height: 80px;      /* set fixed height */
+  object-fit: contain; /* keeps image proportions */
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 4px;
+  background: #f8f9fa;
+}

@@ -1,0 +1,23 @@
+{
+  "name": "pokemon-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+<<<<<<< HEAD
+    "@supabase/supabase-js": "^2.93.3",
+=======
+    "@supabase/supabase-js": "^2.93.2",
+>>>>>>> 249a76cb6364d0303202c91fd2acd415bee6bceb
+    "cors": "^2.8.6",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1"
+  }
+}

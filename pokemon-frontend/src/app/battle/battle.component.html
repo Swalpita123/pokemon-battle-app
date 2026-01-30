@@ -1,0 +1,81 @@
+<div class="container mt-4">
+  <h2 class="text-center mb-4">⚔️ Pokémon Battle</h2>
+
+  <div class="row">
+    <!-- Team A -->
+    <div class="col-md-6 mb-3">
+      <h4>Team A</h4>
+
+      <select class="form-select" [(ngModel)]="teamA" [compareWith]="compareTeams">
+        <option [ngValue]="undefined">Select Team</option>
+        <option *ngFor="let team of teams" [ngValue]="team">
+          {{ team.name }}
+        </option>
+      </select>
+
+      <div *ngIf="teamA" class="mt-3 d-flex gap-2 flex-wrap">
+        <!-- <div *ngFor="let p of teamA.pokemons" class="text-center">
+          <img [src]="p.image" width="50">
+          <div>{{ p.name }}</div>
+        </div> -->
+        <div *ngFor="let p of teamA.pokemons" class="text-center">
+          <img [src]="p.image" alt="{{ p.name }}" class="team-pokemon" />
+          <div>{{ p.name }}</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Team B -->
+    <div class="col-md-6 mb-3">
+      <h4>Team B</h4>
+
+      <select class="form-select" [(ngModel)]="teamB" [compareWith]="compareTeams">
+        <option [ngValue]="undefined">Select Team</option>
+        <option *ngFor="let team of teams" [ngValue]="team">
+          {{ team.name }}
+        </option>
+      </select>
+
+      <div *ngIf="teamB" class="mt-3 d-flex gap-2 flex-wrap">
+        <!-- <div *ngFor="let p of teamB.pokemons" class="text-center">
+          <img [src]="p.image" width="50">
+          <div>{{ p.name }}</div>
+        </div> -->
+        <div *ngFor="let p of teamB.pokemons" class="text-center">
+          <img [src]="p.image" alt="{{ p.name }}" class="team-pokemon" />
+          <div>{{ p.name }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Start Battle -->
+  <div class="text-center mt-4">
+    <!-- <button
+      class="btn btn-danger btn-lg px-5"
+      [disabled]="!teamA || !teamB || teamA === teamB"
+      (click)="startBattle()">
+      Start Battle
+    </button> -->
+    <button
+      class="btn btn-danger btn-lg px-5"
+      [disabled]="!teamA || !teamB || compareTeams(teamA, teamB)"
+      (click)="startBattle()"
+    >
+      Start Battle
+    </button>
+  </div>
+
+  <!-- Battle Log -->
+  <div *ngIf="battleStarted" class="mt-4">
+    <h4>📜 Battle Log</h4>
+
+    <ul class="list-group">
+      <li *ngFor="let log of battleLog" class="list-group-item">
+        {{ log }}
+      </li>
+    </ul>
+
+    <h3 class="text-success text-center mt-3" *ngIf="winner">🏆 Winner: {{ winner }}</h3>
+  </div>
+</div>
