@@ -1,21 +1,22 @@
 <div class="container mt-4">
-
   <h2>🛡️ Create Your Pokémon Team</h2>
-
 
   <!-- Team Name Input -->
   <div class="team-name mt-3">
-    <input type="text" [(ngModel)]="teamName" placeholder="Enter team name" class="form-control">
+    <input type="text" [(ngModel)]="teamName" placeholder="Enter team name" class="form-control" />
   </div>
 
   <!-- Select Pokémon -->
   <div class="pokemon-selection mt-3">
     <h4>Select Pokémon (max 6)</h4>
     <div class="pokemons-list">
-      <div *ngFor="let p of pokemons" class="pokemon-card" 
-           [class.selected]="selectedPokemons.includes(p)"
-           (click)="addPokemon(p)">
-        <img [src]="p.image" alt="{{p.name}}">
+      <div
+        *ngFor="let p of pokemons"
+        class="pokemon-card"
+        [class.selected]="selectedPokemons.includes(p)"
+        (click)="addPokemon(p)"
+      >
+        <img [src]="p.image" alt="{{ p.name }}" />
         <div class="pokemon-name">{{ p.name }}</div>
         <div class="pokemon-type">{{ p.type }}</div>
         <div class="pokemon-power">{{ p.power }}</div>
@@ -23,14 +24,12 @@
     </div>
   </div>
 
-  
-
   <!-- Selected Pokémon (under input, only image + name) -->
   <div class="selected-pokemons mt-3" *ngIf="selectedPokemons.length">
     <h5>Selected Pokémon</h5>
     <div class="selected-list">
       <div *ngFor="let p of selectedPokemons" class="selected-card">
-        <img [src]="p.image" alt="{{ p.name }}">
+        <img [src]="p.image" alt="{{ p.name }}" />
         <div class="pokemon-name">{{ p.name }}</div>
       </div>
     </div>
@@ -38,12 +37,10 @@
 
   <!-- Save Team Button -->
   <div class="mt-3">
-    <button class="btn btn-primary" (click)="saveTeam()" [disabled]="selectedPokemons.length !== 6 || !teamName.trim()">
-      Save Team
-    </button>
+    <button class="btn btn-primary" (click)="saveTeam()">Save Team</button>
   </div>
 
-  <hr>
+  <hr />
 
   <!-- List of Saved Teams -->
   <div class="teams-list mt-3" *ngIf="teams.length">
@@ -53,14 +50,14 @@
         <div>
           <strong>{{ team.name }}</strong> (Total Power: {{ getTeamPower(team) }})
         </div>
+        <button class="btn btn-danger btn-sm" (click)="deleteTeam(team.id)">Delete</button>
       </div>
       <div class="team-pokemons mt-2 d-flex gap-2 flex-wrap">
         <div *ngFor="let p of team.pokemons" class="text-center">
-          <img [src]="p.image" width="50">
+          <img [src]="p.image" width="50" />
           <div>{{ p.name }}</div>
         </div>
       </div>
     </div>
   </div>
-
 </div>
